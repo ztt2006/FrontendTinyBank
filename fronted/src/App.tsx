@@ -2,12 +2,13 @@ import { useDispatch } from "react-redux";
 import type { AppDispatch } from "./stores";
 import { getLoginUserUsingAPI } from "./api/user";
 import { setLoginUser } from "./stores/loginUser";
-import { message } from "antd";
+import { App as AntdApp } from "antd";
 import { useEffect } from "react";
 import { Outlet } from "react-router";
-
+import BasicLayout from "./layouts/BasicLayout";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
+  const { message } = AntdApp.useApp();
 
   const doInitLoginUser = async () => {
     try {
@@ -27,7 +28,11 @@ function App() {
     doInitLoginUser();
   }, []);
 
-  return <Outlet />;
+  return (
+    <BasicLayout>
+      <Outlet />
+    </BasicLayout>
+  );
 }
 
 export default App;
