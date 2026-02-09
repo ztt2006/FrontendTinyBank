@@ -1,0 +1,19 @@
+/* 重置所有元素的盒模型 */
+* {
+  box-sizing: border-box; /* 宽高包含 padding 和 border */
+  padding: 0;
+  margin: 0;
+}
+
+/* 限制页面最大尺寸 */
+html,
+body {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* 通用的内容容器类 */
+.max-width-content {
+  max-width: 1200px; /* 最大宽度 1200px */
+  margin: 0 auto; /* 水平居中 */
+}
