@@ -1,10 +1,10 @@
 const ErrorCode = require("@/common/ErrorCode");
 const ResultUtils = {
-  success(data) {
+  success(data, message = "ok") {
     return {
       code: 0,
       data,
-      message: "ok",
+      message,
     };
   },
   error(errorCode, message) {

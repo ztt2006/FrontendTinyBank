@@ -4,6 +4,7 @@ const router = express.Router();
 const userHandler = require("@/routesHandler/userHandler");
 const {
   registerValidation,
+  loginValidation,
   handleValidationErrors,
 } = require("@/utils/validate/user");
 
@@ -14,6 +15,17 @@ router.post(
   handleValidationErrors,
   userHandler.registerUserHandler,
 );
+
+// 登录用户
+router.post(
+  "/login",
+  loginValidation,
+  handleValidationErrors,
+  userHandler.loginUserHandler,
+);
+
+// 用户注销/退出登录
+router.post("/logout", userHandler.logoutUserHandler);
 // 获取当前登录用户
 router.get("/get/login", userHandler.getLoginUser);
 

@@ -25,6 +25,12 @@ const registerValidation = [
     }),
 ];
 
+// 登录参数校验规则
+const loginValidation = [
+  body("userAccount").notEmpty().withMessage("账号不能为空"),
+  body("userPassword").notEmpty().withMessage("密码不能为空"),
+];
+
 // 统一处理校验结果的中间件
 const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
@@ -38,5 +44,6 @@ const handleValidationErrors = (req, res, next) => {
 
 module.exports = {
   registerValidation,
+  loginValidation,
   handleValidationErrors,
 };
