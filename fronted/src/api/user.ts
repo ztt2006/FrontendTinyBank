@@ -3,6 +3,8 @@ import type {
   getLoginUserUsingAPIResponse,
   LoginUserVO,
   LoginParamsType,
+  RegisterParamsType,
+  LoginResponseType,
 } from "@/type/LoginUser";
 // 获取当前登录用户
 export const getLoginUserUsingAPI = async (
@@ -19,6 +21,13 @@ export const userLogoutAPI = async (options?: LoginUserVO) => {
 };
 
 // 用户登录
-export const userLoginAPI = async (options: LoginParamsType) => {
+export const userLoginAPI = async (
+  options: LoginParamsType,
+): Promise<LoginResponseType> => {
   return request.post("/user/login", options);
+};
+
+// 用户注册
+export const userRegisterAPI = async (options: RegisterParamsType) => {
+  return request.post("/user/register", options);
 };

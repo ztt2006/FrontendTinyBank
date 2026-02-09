@@ -21,6 +21,9 @@ const registerUserHandler = async (req, res, next) => {
       data: {
         userAccount,
         userPassword: encryptedPassword,
+        userName: `user_${Date.now()}`,
+        userAvatar:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/ceshi%2FIMG_1282.PNG",
       },
     });
     res.status(200).json(

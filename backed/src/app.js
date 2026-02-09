@@ -3,14 +3,15 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-const RedisStore = require('connect-redis').default;
-const Redis = require('ioredis');
+const RedisStore = require("connect-redis").default;
+const Redis = require("ioredis");
 const morgan = require("morgan");
 // 错误中间件
 const { errorHandler } = require("@/middleware/errorHandler");
 
 const userRouter = require("@/routes/user");
-
+const questionBankQuestionRouter = require("@/routes/questionBankQuestion");
+const questionBankRouter = require("@/routes/questionBank");
 // 全局处理 BigInt 序列化
 BigInt.prototype.toJSON = function () {
   return this.toString();
@@ -56,6 +57,8 @@ app.locals.redisClient = redisClient;
 app.use(morgan("dev"));
 // api路由
 app.use("/api/user", userRouter);
+app.use("/api/questionBankQuestion", questionBankQuestionRouter);
+app.use("/api/questionBank", questionBankRouter);
 
 // 全局错误处理
 app.use(errorHandler);
