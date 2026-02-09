@@ -6,6 +6,7 @@ import { App as AntdApp } from "antd";
 import { useEffect } from "react";
 import { Outlet } from "react-router";
 import BasicLayout from "./layouts/BasicLayout";
+import AccessLayout from "./layouts/AccessLayout";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { message } = AntdApp.useApp();
@@ -30,7 +31,9 @@ function App() {
 
   return (
     <BasicLayout>
-      <Outlet />
+      <AccessLayout>
+        <Outlet />
+      </AccessLayout>
     </BasicLayout>
   );
 }

@@ -9,4 +9,9 @@ export type LoginUserVO = {
   userRole?: string;
 };
 
+export type LoginParamsType = {
+  userAccount: string;
+  userPassword: string;
+}
+
 export type getLoginUserUsingAPIResponse = requestResponse<LoginUserVO>;

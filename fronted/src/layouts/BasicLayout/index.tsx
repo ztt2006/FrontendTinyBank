@@ -1,7 +1,6 @@
 import { ProLayout } from "@ant-design/pro-components";
 import { GithubFilled, LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import React from "react";
-import logo from "@/assets/logo.png";
 import { useLocation, useNavigate, Link } from "react-router";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/stores";
@@ -38,10 +37,17 @@ export default function BasicLayout({ children }: React.PropsWithChildren) {
       <ProLayout
         title="前端小题库" // 网站标题
         layout="top" // 布局模式：top=顶部导航，side=侧边导航，mix=混合
-        logo={<img src={logo} height={32} width={32} alt="前端小题库" />} // Logo 图片
+        logo={
+          <img
+            src={import.meta.env.VITE_LOGO_IMAGE_URL}
+            height={32}
+            width={32}
+            alt="前端小题库"
+          />
+        } // Logo 图片
         location={{ pathname }} // 当前路径，用于高亮菜单
         avatarProps={{
-          src: loginUser.userAvatar || "/assets/default-avatar.png",
+          src: loginUser.userAvatar || import.meta.env.VITE_DEFAULT_AVATAR_URL,
           size: "small",
           title: loginUser.userName || "未登录用户",
           render: (props, dom) => {

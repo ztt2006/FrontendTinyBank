@@ -41,9 +41,8 @@ const registerUserHandler = async (req, res, next) => {
 const loginUserHandler = async (req, res, next) => {
   try {
     const { userAccount, userPassword } = req.body;
-    console.log("userAccount", userAccount);
-    console.log("userPassword", userPassword);
     const encryptedPassword = encryptPassword(userPassword);
+
     const user = await prisma.user.findFirst({
       where: {
         userAccount,
