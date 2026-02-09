@@ -2,7 +2,7 @@ import { ProLayout } from "@ant-design/pro-components";
 import { GithubFilled, LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import React from "react";
 import logo from "@/assets/logo.png";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, Link } from "react-router";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/stores";
 import { Dropdown, message } from "antd";
@@ -12,6 +12,9 @@ import { setLoginUser } from "@/stores/loginUser";
 import { DEFAULT_USER } from "@/constants/user";
 import SearchInput from "./components/SearchInput";
 import GlobalFooter from "@/components/GlobalFooter";
+import getAccessibleMenus from "@/access/menuAccess";
+import { menus } from "@/config/menu";
+// import styles from "./index.module.scss";
 export default function BasicLayout({ children }: React.PropsWithChildren) {
   const location = useLocation();
   const navigate = useNavigate();
@@ -88,11 +91,12 @@ export default function BasicLayout({ children }: React.PropsWithChildren) {
           return [
             <SearchInput key="search" />,
             <a
-              href="https://github.com/liyupi/mianshiya-next"
+              href="https://github.com/ztt2006/FrontendTinyBank"
               key="github"
               target="_blank"
-            ></a>,
-            <GithubFilled key="GithubFilled"></GithubFilled>,
+            >
+              <GithubFilled key="GithubFilled"></GithubFilled>
+            </a>,
           ];
         }}
         headerTitleRender={(logo, title, _) => {
@@ -115,7 +119,6 @@ export default function BasicLayout({ children }: React.PropsWithChildren) {
             {dom}
           </Link>
         )}
-      >
       >
         {children}
       </ProLayout>
