@@ -14,5 +14,5 @@ export const getLoginUserUsingAPI = async (
 
 // 用户注销
 export const userLogoutAPI = async (options?: LoginUserVO) => {
-  return request.post("/user/logout");
+  return request.post("/user/logout", options || {});
 };

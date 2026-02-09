@@ -99,9 +99,9 @@ export default function BasicLayout({ children }: React.PropsWithChildren) {
             </a>,
           ];
         }}
-        headerTitleRender={(logo, title, _) => {
+        headerTitleRender={(logo, title) => {
           return (
-            <a>
+            <a href="/">
               {logo}
               {title}
             </a>
