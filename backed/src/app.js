@@ -12,6 +12,7 @@ const { errorHandler } = require("@/middleware/errorHandler");
 const userRouter = require("@/routes/user");
 const questionBankQuestionRouter = require("@/routes/questionBankQuestion");
 const questionBankRouter = require("@/routes/questionBank");
+const questionRouter = require("@/routes/question");
 // 全局处理 BigInt 序列化
 BigInt.prototype.toJSON = function () {
   return this.toString();
@@ -59,6 +60,7 @@ app.use(morgan("dev"));
 app.use("/api/user", userRouter);
 app.use("/api/questionBankQuestion", questionBankQuestionRouter);
 app.use("/api/questionBank", questionBankRouter);
+app.use("/api/question", questionRouter);
 
 // 全局错误处理
 app.use(errorHandler);

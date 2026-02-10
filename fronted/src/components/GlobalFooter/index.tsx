@@ -12,7 +12,7 @@ export default function GlobalFooter() {
       <div>© {currentYear} 面试刷题平台</div>
       <div>
         <a href="https://gitee.com/ZhouTaotao666/projects" target="_blank">
-          作者：程序员小莫
+          作者：小莫莫
         </a>
       </div>
     </div>

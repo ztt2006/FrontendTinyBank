@@ -92,7 +92,7 @@ async function main() {
         title: "JavaScript 基础",
         description: "包含 JavaScript 的基础知识题目",
         picture:
-          "https://pic.code-nav.cn/mianshiya/question_bank_picture/1777886594896760834/JldkWf9w_JavaScript.png",
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
@@ -100,133 +100,151 @@ async function main() {
         title: "CSS 样式",
         description: "包含 CSS 相关的样式问题",
         picture:
-          "https://pic.code-nav.cn/mianshiya/question_bank_picture/1777886594896760834/QatnFmEN_CSS.png",
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
       {
         id: 3,
         title: "HTML 基础",
         description: "HTML 标记语言的基本知识",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 3,
       },
       {
         id: 4,
         title: "前端框架",
         description: "React, Vue, Angular 等框架相关的题目",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
         id: 5,
         title: "算法与数据结构",
         description: "数据结构和算法题目",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
       {
         id: 6,
         title: "数据库原理",
         description: "SQL 语句和数据库设计",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 3,
       },
       {
         id: 7,
         title: "操作系统",
         description: "操作系统的基本概念",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
         id: 8,
         title: "网络协议",
         description: "HTTP, TCP/IP 等网络协议题目",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
       {
         id: 9,
         title: "设计模式",
         description: "常见设计模式及其应用",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 3,
       },
       {
         id: 10,
         title: "编程语言概述",
         description: "多种编程语言的基础知识",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
         id: 11,
         title: "版本控制",
         description: "Git 和 SVN 的使用",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
       {
         id: 12,
         title: "安全与加密",
         description: "网络安全和加密技术",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 3,
       },
       {
         id: 13,
         title: "云计算",
         description: "云服务和架构",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
         id: 14,
         title: "微服务架构",
         description: "微服务的设计与实现",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
       {
         id: 15,
         title: "容器技术",
         description: "Docker 和 Kubernetes 相关知识",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 3,
       },
       {
         id: 16,
         title: "DevOps 实践",
         description: "持续集成与持续交付",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
         id: 17,
         title: "数据分析",
         description: "数据分析和可视化",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
       {
         id: 18,
         title: "人工智能",
         description: "机器学习与深度学习基础",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 3,
       },
       {
         id: 19,
         title: "区块链技术",
         description: "区块链的基本原理和应用",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 1,
       },
       {
         id: 20,
         title: "项目管理",
         description: "软件开发项目的管理和执行",
-        picture: "https://www.mianshiya.com/logo.png",
+        picture:
+          "https://lvyou-1332935562.cos.ap-nanjing.myqcloud.com/my%2FIMG_2403.PNG",
         userId: 2,
       },
     ],
