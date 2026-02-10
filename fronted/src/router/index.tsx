@@ -13,7 +13,7 @@ import UserAdminPage from "@/pages/admin/UserAdminPage";
 import BankAdminPage from "@/pages/admin/BankAdminPage";
 import QuestionAdminPage from "@/pages/admin/QuestionAdminPage";
 import Forbidden from "@/pages/Forbidden";
-
+import NotFound from "@/pages/NotFound";
 const routes = [
   {
     path: "/",
@@ -70,6 +70,10 @@ const routes = [
       {
         path: "forbidden",
         element: <Forbidden />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

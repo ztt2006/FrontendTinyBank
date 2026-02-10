@@ -1,0 +1,77 @@
+/* eslint-disable */
+/* tailwindcss v4 */
+@import "../../../global-tailwind.css";
+
+.container {
+  @apply flex min-h-[100svh] items-center justify-center px-3 py-8 sm:min-h-[80vh] sm:px-4;
+}
+
+.card {
+  @apply w-full max-w-md shadow-lg rounded-2xl;
+}
+
+.cardContent {
+  @apply flex flex-col gap-5 p-5 sm:gap-6 sm:p-8;
+}
+
+.header {
+  @apply flex flex-col items-center gap-3 text-center;
+}
+
+.logo {
+  @apply h-12 w-12 rounded-xl object-contain sm:h-14 sm:w-14;
+}
+
+.title {
+  @apply text-xl font-bold text-foreground sm:text-2xl;
+}
+
+.subtitle {
+  @apply text-sm text-muted-foreground;
+}
+
+.form {
+  @apply flex flex-col gap-4 sm:gap-5;
+}
+
+.fieldGroup {
+  @apply flex flex-col gap-2;
+}
+
+.inputWrapper {
+  @apply relative;
+}
+
+
+.inputIcon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground;
+  font-size: 16px;
+}
+
+.input {
+  @apply h-10 pl-10 text-base sm:h-11;
+}
+
+.errorText {
+  @apply text-xs text-destructive mt-1;
+}
+
+.footer {
+  @apply text-center text-sm text-muted-foreground;
+}
+
+.link {
+  @apply text-primary font-medium hover:underline;
+}
+
+.submitBtn {
+  @apply h-10 w-full text-base font-medium mt-1 sm:h-11;
+}
+
+.divider {
+  @apply flex items-center gap-3 text-xs text-muted-foreground;
+}
+
+.dividerLine {
+  @apply h-px flex-1 bg-border;
+}

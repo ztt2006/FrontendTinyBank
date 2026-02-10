@@ -1,0 +1,70 @@
+@reference "../../global-tailwind.css";
+
+.container {
+  @apply flex min-h-[80vh] items-center justify-center px-4;
+}
+
+.card {
+  @apply w-full max-w-lg border-none shadow-none bg-transparent;
+}
+
+.cardContent {
+  @apply flex flex-col items-center gap-8 pt-6;
+}
+
+.visualBlock {
+  @apply relative select-none flex items-center justify-center;
+}
+
+.bigNumber {
+  @apply text-[10rem] font-black leading-none tracking-tighter;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.2;
+  filter: blur(1px);
+}
+
+.oopsText {
+  @apply absolute inset-0 flex items-center justify-center text-5xl font-extrabold;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.divider {
+  @apply h-1 w-16 rounded-full;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+}
+
+.textBlock {
+  @apply space-y-3 text-center;
+}
+
+.title {
+  @apply text-2xl font-bold text-foreground;
+}
+
+.subtitle {
+  @apply text-sm leading-relaxed text-muted-foreground max-w-xs;
+}
+
+.actions {
+  @apply flex gap-4 pt-2;
+}
+
+.actions button {
+  @apply h-12 px-8 text-base rounded-lg;
+}

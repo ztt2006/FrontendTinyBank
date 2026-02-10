@@ -1,0 +1,15 @@
+{
+    "css.lint.unknownAtRules": "ignore",
+    "css.validate": false,
+    "scss.validate": false,
+    "less.validate": false,
+    "stylelint.enable": false,
+    "postcss.validate": false,
+    "tailwindCSS.includeLanguages": {
+        "css": "css",
+        "postcss": "css"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    }
+}
