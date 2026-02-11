@@ -1,9 +1,8 @@
-/* eslint-disable */
-/* tailwindcss v4 */
+
 @import "../../../global-tailwind.css";
 
 .container {
-  @apply flex min-h-[100svh] items-center justify-center px-3 py-8 sm:min-h-[80vh] sm:px-4;
+  @apply flex min-h-svh items-center justify-center px-3 py-8 sm:min-h-[80vh] sm:px-4;
 }
 
 .card {

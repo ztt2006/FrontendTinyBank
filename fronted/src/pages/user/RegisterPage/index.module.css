@@ -1,0 +1,76 @@
+@import "../../../global-tailwind.css";
+
+.container {
+  @apply flex min-h-svh items-center justify-center px-3 py-8 sm:min-h-[80vh] sm:px-4;
+  @apply bg-linear-to-b from-background to-muted/40;
+}
+
+.card {
+  @apply w-full max-w-md rounded-2xl shadow-lg;
+  @apply border border-border/60 bg-card/90 backdrop-blur;
+}
+
+.cardContent {
+  @apply flex flex-col gap-5 p-5 sm:gap-6 sm:p-8;
+}
+
+.header {
+  @apply flex flex-col items-center gap-3 text-center;
+}
+
+.logo {
+  @apply h-12 w-12 rounded-xl object-contain sm:h-14 sm:w-14;
+}
+
+.title {
+  @apply text-xl font-bold text-foreground sm:text-2xl;
+}
+
+.subtitle {
+  @apply text-sm text-muted-foreground;
+}
+
+.divider {
+  @apply flex items-center gap-3 text-xs text-muted-foreground;
+}
+
+.dividerLine {
+  @apply h-px flex-1 bg-border;
+}
+
+.form {
+  @apply flex flex-col gap-4 sm:gap-5;
+}
+
+.fieldGroup {
+  @apply flex flex-col gap-2;
+}
+
+.inputWrapper {
+  @apply relative;
+}
+
+.inputIcon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground;
+  font-size: 16px;
+}
+
+.input {
+  @apply h-10 pl-10 text-base sm:h-11;
+}
+
+.errorText {
+  @apply mt-1 text-xs text-destructive;
+}
+
+.submitBtn {
+  @apply mt-1 h-10 w-full text-base font-medium sm:h-11;
+}
+
+.footer {
+  @apply text-center text-sm text-muted-foreground;
+}
+
+.link {
+  @apply text-primary font-medium hover:underline;
+}

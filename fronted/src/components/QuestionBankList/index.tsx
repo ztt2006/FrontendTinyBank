@@ -10,7 +10,7 @@ const QuestionBankList = (props: { questionBankList: record[] }) => {
       <Row gutter={[16, 16]}>
         {questionBankList.map((questionBank) => (
           <Col xs={24} sm={12} md={8} lg={6} key={questionBank.id}>
-            <Link to={`/banks/${questionBank.id}`}>
+            <Link to={`/bank/${questionBank.id}`}>
               <Card>
                 <Meta
                   avatar={<Avatar src={questionBank.picture} />}

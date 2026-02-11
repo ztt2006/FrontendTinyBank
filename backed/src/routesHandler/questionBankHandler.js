@@ -73,7 +73,88 @@ const listQuestionBankPageVOHandler = async (req, res, next) => {
     next(error);
   }
 };
+// 根据id获取题库VO
+const getQuestionBankVOHandler = async (req,res,next) => {
+  try {
+    const {id,needQueryQuestionList,current = 1,pageSize = 10} = req.query;
+    if(!id||Number(id)<=0){
+      throw new BusinessException(
+        ErrorCode.PARAMS_ERROR,
+        "题库id不能为空",
+      );
+    }
+
+    const questionBank = await prisma.questionBank.findFirst({
+      where:{id:Number(id),isDelete:0},
+      include:{
+        user:true,
+      }
+    })
+    if(!questionBank){
+      throw new BusinessException(
+        ErrorCode.NOT_FOUND_ERROR,
+        "题库不存在",
+      );
+    }
+    const questionBankVO = toQuestionBankVO(questionBank,questionBank.user);
+    // 是否需要查询题目列表
+    if(needQueryQuestionList === 'true'){
+      // 查询关联的题目
+      const relations = await prisma.questionBankQuestion.findMany({
+        where:{questionBankId:Number(id)},
+        select:{
+          questionId:true,
+        }
+      })
+      const questionIds = relations.map((rel) => rel.questionId);
+      if(questionIds.length > 0){
+        const where = {
+          id: {
+            in: questionIds,
+          },
+          isDelete: 0,
+        }
+        const total = await prisma.question.count({where})
+        const questions = await prisma.question.findMany({
+          where,
+          skip: (Number(current) - 1) * Number(pageSize),
+          take: Number(pageSize),
+          orderBy:{
+            createTime:'desc',
+          },
+          include:{
+            user:true,
+          }
+        })
+        const questionRecords = questions.map(q=>({
+          id:Number(q.id),
+          title:q.title,
+          content:q.content,
+          tags:q.tags,
+          answer:q.answer,
+          userId:Number(q.userId),
+          createTime:q.createTime,
+          updateTime:q.updateTime,
+          user:q.user
+            ? {
+                id: Number(q.user.id),
+                userName: q.user.userName,
+                userAvatar: q.user.userAvatar,
+              }
+            : null,
+        }))
+        questionBankVO.questionRecords = ResultUtils.page(questionRecords,total,Number(current),Number(pageSize));
+      }else{
+        questionBankVO.questionRecords = ResultUtils.page([],0,Number(current),Number(pageSize));
+      }
+    }
+    res.status(200).json(ResultUtils.success(questionBankVO,"获取题库VO成功"));
+  } catch (error) {
+    next(error);
+  }
+}
 const questionBankHandler = {
   listQuestionBankPageVOHandler,
+  getQuestionBankVOHandler,
 };
 module.exports = questionBankHandler;
