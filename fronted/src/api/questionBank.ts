@@ -17,3 +17,13 @@ export const listQuestionBanksAPI = async (
     },
   });
 };
+
+// 根据id获取题库VO
+export const getQuestionBankVOByIdAPI = async (params) => {
+  return request(`/questionBank/get/vo`, {
+    method: "GET",
+    params:{
+      ...params
+    }
+  });
+}
