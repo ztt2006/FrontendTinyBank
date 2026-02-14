@@ -1,0 +1,82 @@
+@import "../../global-tailwind.css";
+
+.page {
+  @apply min-h-[80vh] bg-linear-to-b from-background via-background to-muted/30;
+}
+
+.container {
+  @apply mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:pt-10;
+  @apply flex flex-col gap-6;
+}
+
+.heroCard {
+  @apply border border-border/60 bg-card/85 shadow-sm backdrop-blur;
+}
+
+.heroContent {
+  @apply grid gap-6 p-6 sm:p-8 md:grid-cols-[140px_1fr] md:items-center;
+}
+
+.mediaWrap {
+  @apply flex h-28 w-28 items-center justify-center rounded-2xl bg-muted/60 p-2 shadow-xs sm:h-32 sm:w-32;
+}
+
+.cover {
+  @apply h-full w-full rounded-xl object-cover;
+}
+
+.info {
+  @apply flex flex-col gap-4;
+}
+
+.headerRow {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.title {
+  @apply text-2xl font-semibold tracking-tight text-foreground sm:text-3xl;
+}
+
+.badge {
+  @apply rounded-full border border-border/60 bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground;
+}
+
+.desc {
+  @apply text-sm leading-relaxed text-muted-foreground sm:text-base;
+}
+
+.statGroup {
+  @apply grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4;
+}
+
+.statItem {
+  @apply flex flex-col gap-1 rounded-xl border border-border/60 bg-muted/40 px-4 py-3;
+}
+
+.statValue {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.statLabel {
+  @apply text-xs text-muted-foreground;
+}
+
+.actions {
+  @apply flex flex-col gap-3 sm:flex-row sm:items-center;
+}
+
+.listSection {
+  @apply flex flex-col gap-3;
+}
+
+.listHeader {
+  @apply flex flex-wrap items-center justify-between gap-2;
+}
+
+.listTitle {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.listHint {
+  @apply text-xs text-muted-foreground;
+}

@@ -57,6 +57,7 @@ const listQuestionBankQuestionPageVOHandler = async (req, res, next) => {
       },
     });
     const records = relations.map((r) => toQuestionBankQuestionVO(r, r.user));
+
     res
       .status(200)
       .json(
