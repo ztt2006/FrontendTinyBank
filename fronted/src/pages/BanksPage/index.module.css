@@ -1,0 +1,90 @@
+@import "../../global-tailwind.css";
+
+.page {
+  @apply min-h-[80vh] bg-linear-to-b from-background via-background to-muted/30;
+}
+
+.container {
+  @apply mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:pt-10;
+  @apply flex flex-col gap-6;
+}
+
+.headerCard {
+  @apply border border-border/60 bg-card/85 shadow-sm backdrop-blur;
+}
+
+.headerContent {
+  @apply flex flex-col gap-6 p-6 sm:p-8;
+}
+
+.titleRow {
+  @apply flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between;
+}
+
+.titleBlock {
+  @apply flex flex-col gap-2;
+}
+
+.kicker {
+  @apply text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground;
+}
+
+.title {
+  @apply text-2xl font-semibold tracking-tight text-foreground sm:text-3xl;
+}
+
+.subtitle {
+  @apply text-sm text-muted-foreground sm:text-base;
+}
+
+.statGroup {
+  @apply grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4;
+}
+
+.statItem {
+  @apply flex min-w-[120px] flex-col gap-1 rounded-xl border border-border/60 bg-muted/40 px-4 py-3;
+}
+
+.statValue {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.statLabel {
+  @apply text-xs text-muted-foreground;
+}
+
+.listCard {
+  @apply border border-border/60 bg-card/90 shadow-sm;
+}
+
+.listContent {
+  @apply flex flex-col gap-4 p-6 sm:p-8;
+}
+
+.listHeader {
+  @apply flex flex-wrap items-center justify-between gap-3;
+}
+
+.listTitleWrap {
+  @apply flex flex-col gap-1;
+}
+
+.listTitle {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.listSubtitle {
+  @apply text-xs text-muted-foreground;
+}
+
+.listHint {
+  @apply text-xs text-muted-foreground;
+}
+
+.listBody {
+  @apply rounded-xl bg-muted/20 p-3 sm:p-4;
+}
+
+.pagination {
+  @apply flex items-center justify-center pt-2 sm:pt-4;
+}
