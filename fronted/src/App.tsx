@@ -1,8 +1,8 @@
-import { useDispatch } from "react-redux";
-import type { AppDispatch } from "./stores";
+import { useDispatch, useSelector } from "react-redux";
+import type { AppDispatch, RootState } from "./stores";
 import { getLoginUserUsingAPI } from "./api/user";
 import { setLoginUser } from "./stores/loginUser";
-import { App as AntdApp } from "antd";
+import { App as AntdApp, Spin } from "antd";
 import { useEffect } from "react";
 import { Outlet } from "react-router";
 import BasicLayout from "./layouts/BasicLayout";
@@ -10,6 +10,9 @@ import AccessLayout from "./layouts/AccessLayout";
 function App() {
   const dispatch = useDispatch<AppDispatch>();
   const { message } = AntdApp.useApp();
+  const loadingCount = useSelector(
+    (state: RootState) => state.loading.count,
+  );
 
   const doInitLoginUser = async () => {
     try {
@@ -30,11 +33,19 @@ function App() {
   }, []);
 
   return (
-    <BasicLayout>
-      <AccessLayout>
-        <Outlet />
-      </AccessLayout>
-    </BasicLayout>
+    <>
+      <BasicLayout>
+        <AccessLayout>
+          <Outlet />
+        </AccessLayout>
+      </BasicLayout>
+      {loadingCount > 0 ? (
+        <div className="global-loading-overlay">
+          <Spin size="large" />
+          <span className="global-loading-text">加载中...</span>
+        </div>
+      ) : null}
+    </>
   );
 }
 

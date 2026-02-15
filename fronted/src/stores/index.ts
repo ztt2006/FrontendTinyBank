@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import loginUser from "./loginUser";
+import loading from "./loading";
 
 const store = configureStore({
   reducer: {
     loginUser,
+    loading,
   },
 });
 
