@@ -1,6 +1,7 @@
 import { Card, Typography } from "antd";
 import TagList from "../TagList";
 import MdViewer from "../MdViewer";
+import useAddUserSignInRecord from "@/hooks/useAddUserSignInRecord";
 const { Title } = Typography;
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const QuestionCard = (props: Props) => {
   const { question } = props;
-
+  useAddUserSignInRecord();
   return (
     <div className="question-card">
       <Card>

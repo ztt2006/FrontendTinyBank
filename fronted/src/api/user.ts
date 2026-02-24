@@ -6,6 +6,8 @@ import type {
   RegisterParamsType,
   LoginResponseType,
 } from "@/type/LoginUser";
+import type { addSignInRecordAPIResponseType } from "@/type/user";
+import type { optionType } from "@/type/common";
 // 获取当前登录用户
 export const getLoginUserUsingAPI = async (
   options?: LoginUserVO,
@@ -30,4 +32,11 @@ export const userLoginAPI = async (
 // 用户注册
 export const userRegisterAPI = async (options: RegisterParamsType) => {
   return request.post("/user/register", options);
+};
+
+// 添加用户签到记录
+export const addSignInRecordAPI = async (
+  options?: optionType,
+): Promise<addSignInRecordAPIResponseType> => {
+  return request.post("/user/add/sign_in", options || {});
 };

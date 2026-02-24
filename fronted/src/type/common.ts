@@ -7,3 +7,6 @@ export type requestResponseNoData = {
   code: number;
   message: string;
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type optionType = { [key: string]: any };

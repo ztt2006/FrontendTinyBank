@@ -6,6 +6,7 @@ import type {
   searchQuestionsAPIResponseType,
   getQuestionVOAPIResponseType,
 } from "@/type/Question";
+import type { optionType } from "@/type/common";
 // 获取题目列表
 export const listQuestionsAPI = async (
   body: listQuestionsAPIBodyType,
@@ -24,7 +25,7 @@ export const listQuestionsAPI = async (
 // 搜索题目
 export const searchQuestionsAPI = async (
   body: searchQuestionsAPIBodyType,
-  options?,
+  options?: optionType,
 ): Promise<searchQuestionsAPIResponseType> => {
   return request.post("/question/search/page/vo", body, {
     headers: {
@@ -37,7 +38,7 @@ export const searchQuestionsAPI = async (
 // 根据id获取题目vo
 export const getQuestionVOAPI = async (
   questionId: number,
-  options?,
+  options?: optionType,
 ): Promise<getQuestionVOAPIResponseType> => {
   return request.get("/question/get/vo", {
     params: { id: questionId },
