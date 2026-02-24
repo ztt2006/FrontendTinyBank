@@ -31,3 +31,22 @@ export type listQuestionsAPIResponseType = requestResponse<{
   size: number;
   pages: number;
 }>;
+
+// 搜索题目
+export type searchQuestionsAPIBodyType = {
+  current?: number;
+  pageSize?: number;
+  searchText?: string;
+  title?: string;
+  tags?: string[];
+  sortField?: string;
+  sortOrder?: "ascend" | "descend";
+};
+
+export type searchQuestionsAPIResponseType = requestResponse<{
+  records: record[];
+  total: number;
+  curremt: number;
+  size: number;
+  pages: number;
+}>;

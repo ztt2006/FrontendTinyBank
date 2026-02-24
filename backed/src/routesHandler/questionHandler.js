@@ -99,8 +99,64 @@ async function listQuestionPageVOHandler(req, res, next) {
   }
 }
 
+// 搜索题目处理器
+async function searchQuestionPageVOHandler(req, res, next) {
+  try {
+    const {
+      current: rawCurrent = 1,
+      pageSize: rawPageSize = 10,
+      searchText,
+      title,
+      tags,
+      sortField,
+      sortOrder,
+    } = req.body;
+    const current = parseInt(rawCurrent, 10);
+    const pageSize = parseInt(rawPageSize, 10);
+    if (pageSize > 200) {
+      throw new BusinessException(
+        ErrorCode.PARAMS_ERROR,
+        "pageSize 不能超过 200",
+      );
+    }
+    const where = { isDelete: 0 };
+    if (searchText) {
+      where.OR = [
+        { title: { contains: searchText } },
+        { content: { contains: searchText } },
+        { answer: { contains: searchText } },
+      ];
+    }
+    if (title) where.title = { contains: title };
+    const orderBy = {};
+    if (sortField) {
+      orderBy[sortField] = sortOrder === "ascend" ? "asc" : "desc";
+    } else {
+      orderBy.createTime = "desc";
+    }
+    const total = await prisma.question.count({ where });
+    const questions = await prisma.question.findMany({
+      where,
+      skip: (current - 1) * pageSize,
+      take: pageSize,
+      orderBy,
+      include: { user: true },
+    });
+    const records = questions.map((q) => toQuestionVO(q, q.user));
+    res.json(
+      ResultUtils.success(
+        ResultUtils.page(records, total, current, pageSize),
+        "搜索题目成功",
+      ),
+    );
+  } catch (error) {
+    next(error);
+  }
+}
+
 const questionHandler = {
   listQuestionPageVOHandler,
+  searchQuestionPageVOHandler,
 };
 
 module.exports = questionHandler;

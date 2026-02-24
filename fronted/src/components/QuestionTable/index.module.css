@@ -1,0 +1,153 @@
+@import "../../global-tailwind.css";
+
+.card {
+  @apply border border-border/60 bg-card/90 shadow-sm mb-8;
+}
+
+.cardContent {
+  @apply flex flex-col gap-4 p-6 pb-8 sm:p-8 sm:pb-10;
+}
+
+.header {
+  @apply flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between;
+}
+
+.titleWrap {
+  @apply flex flex-col gap-1;
+}
+
+.title {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.subtitle {
+  @apply text-xs text-muted-foreground;
+}
+
+.searchWrap {
+  @apply flex gap-2;
+}
+
+.searchInputWrap {
+  @apply relative flex-1 max-w-sm;
+}
+
+.searchIcon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground;
+}
+
+.searchInput {
+  @apply pl-9 h-9 bg-muted/30 border-border/60;
+}
+
+.searchBtn {
+  @apply h-9 px-4;
+}
+
+.tableWrap {
+  @apply rounded-xl bg-muted/20 overflow-hidden;
+}
+
+.tableHeader {
+  @apply bg-muted/40;
+}
+
+.tableHeaderCell {
+  @apply font-medium text-muted-foreground text-sm py-3;
+}
+
+.tableRow {
+  @apply border-b border-border/40 last:border-b-0 transition-colors hover:bg-muted/30;
+}
+
+.tableCell {
+  @apply py-4;
+}
+
+.questionLink {
+  @apply text-foreground hover:text-primary font-medium transition-colors line-clamp-1;
+}
+
+.tagList {
+  @apply flex flex-wrap gap-1.5;
+}
+
+.tag {
+  @apply text-xs px-2 py-0.5 font-normal bg-muted/60 text-muted-foreground border-border/40;
+}
+
+.tagMore {
+  @apply text-xs px-2 py-0.5 font-normal bg-muted/40 text-muted-foreground;
+}
+
+.noTag {
+  @apply text-muted-foreground text-sm;
+}
+
+/* 移动端卡片 */
+.mobileList {
+  @apply divide-y divide-border/40;
+}
+
+.mobileItem {
+  @apply p-4 space-y-2 hover:bg-muted/20 transition-colors;
+}
+
+.mobileLink {
+  @apply text-foreground hover:text-primary font-medium block line-clamp-2 leading-relaxed;
+}
+
+/* 空状态 */
+.emptyState {
+  @apply py-16 flex flex-col items-center justify-center text-muted-foreground gap-3;
+}
+
+.emptyIcon {
+  @apply rounded-full bg-muted/60 p-4;
+}
+
+.emptyTitle {
+  @apply font-medium text-foreground/80;
+}
+
+.emptySubtitle {
+  @apply text-sm;
+}
+
+/* 骨架屏 */
+.skeletonRow {
+  @apply py-4;
+}
+
+.skeletonTitle {
+  @apply h-5 w-[70%] bg-muted/60 rounded;
+}
+
+.skeletonTags {
+  @apply flex gap-1.5;
+}
+
+.skeletonTag {
+  @apply h-5 w-14 bg-muted/60 rounded-full;
+}
+
+/* 分页 */
+.pagination {
+  @apply flex items-center justify-between pt-4 mt-4 border-t border-border/40;
+}
+
+.paginationInfo {
+  @apply text-sm text-muted-foreground;
+}
+
+.paginationControls {
+  @apply flex items-center gap-2;
+}
+
+.pageBtn {
+  @apply h-8 px-3 text-sm;
+}
+
+.pageNum {
+  @apply h-8 w-8 p-0 text-sm;
+}
