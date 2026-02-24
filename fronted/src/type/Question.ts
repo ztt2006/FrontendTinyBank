@@ -50,3 +50,6 @@ export type searchQuestionsAPIResponseType = requestResponse<{
   size: number;
   pages: number;
 }>;
+
+// 根据id获取题目vo
+export type getQuestionVOAPIResponseType = requestResponse<record>;

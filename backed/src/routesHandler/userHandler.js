@@ -3,7 +3,7 @@ const ResultUtils = require("@/common/ResultUtils");
 const BusinessException = require("@/common/BusinessException");
 const prisma = require("../prisma");
 const { encryptPassword } = require("@/utils/crypto");
-
+const { getLoginUserFromSession } = require("../middleware/auth");
 // 用户注册
 const registerUserHandler = async (req, res, next) => {
   try {
@@ -111,11 +111,40 @@ const logoutUserHandler = async (req, res, next) => {
   }
 };
 
+// 添加用户签到记录
+const addSignInRecordHandler = async (req, res, next) => {
+  try {
+    const loginUser = getLoginUserFromSession(req);
+    const redisClient = req.app.locals.redisClient;
+
+    const now = new Date();
+    const year = now.getFullYear();
+    const key = `user:siginIn:${year}:${loginUser.id}`;
+
+    // 计算当前是一年中的第几天
+    const startOfYear = new Date(year, 0, 0);
+    const diff = now - startOfYear;
+    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    // 使用Redis SETBIT 记录签到
+    const alreadySigned = await redisClient.getbit(key, dayOfYear);
+    if (alreadySigned) {
+      res.json(ResultUtils.success(true, "今日已签到"));
+      return;
+    }
+    await redisClient.setbit(key, dayOfYear, 1);
+    res.json(ResultUtils.success(true, "签到成功"));
+  } catch (error) {
+    next(error);
+  }
+};
+
 const userHandler = {
   getLoginUser,
   registerUserHandler,
   loginUserHandler,
   logoutUserHandler,
+  addSignInRecordHandler,
 };
 
 module.exports = userHandler;

@@ -4,6 +4,7 @@ import type {
   listQuestionsAPIResponseType,
   searchQuestionsAPIBodyType,
   searchQuestionsAPIResponseType,
+  getQuestionVOAPIResponseType,
 } from "@/type/Question";
 // 获取题目列表
 export const listQuestionsAPI = async (
@@ -29,6 +30,17 @@ export const searchQuestionsAPI = async (
     headers: {
       "Content-Type": "application/json",
     },
+    ...(options || {}),
+  });
+};
+
+// 根据id获取题目vo
+export const getQuestionVOAPI = async (
+  questionId: number,
+  options?,
+): Promise<getQuestionVOAPIResponseType> => {
+  return request.get("/question/get/vo", {
+    params: { id: questionId },
     ...(options || {}),
   });
 };

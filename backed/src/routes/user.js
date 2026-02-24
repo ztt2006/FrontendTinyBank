@@ -24,6 +24,9 @@ router.post(
   userHandler.loginUserHandler,
 );
 
+// 添加用户签到记录
+router.post("/add/sign_in", userHandler.addSignInRecordHandler);
+
 // 用户注销/退出登录
 router.post("/logout", userHandler.logoutUserHandler);
 // 获取当前登录用户

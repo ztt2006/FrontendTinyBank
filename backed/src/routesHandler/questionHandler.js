@@ -154,9 +154,37 @@ async function searchQuestionPageVOHandler(req, res, next) {
   }
 }
 
+// 根据id获取题目vo处理器
+async function getQuestionVOHandler(req, res, next) {
+  try {
+    const { id } = req.query;
+    (console.log("id"), id);
+
+    if (!id || id <= 0) {
+      throw new BusinessException(ErrorCode.PARAMS_ERROR, "题目id不能为空");
+    }
+    const question = await prisma.question.findFirst({
+      where: { id: Number(id), isDelete: 0 },
+      include: { user: true },
+    });
+    if (!question) {
+      throw new BusinessException(ErrorCode.NOT_FOUND_ERROR, "题目不存在");
+    }
+    res.json(
+      ResultUtils.success(
+        toQuestionVO(question, question.user),
+        "获取题目成功",
+      ),
+    );
+  } catch (error) {
+    next(error);
+  }
+}
+
 const questionHandler = {
   listQuestionPageVOHandler,
   searchQuestionPageVOHandler,
+  getQuestionVOHandler,
 };
 
 module.exports = questionHandler;
