@@ -1,0 +1,69 @@
+@import "../../global-tailwind.css";
+
+.container {
+  @apply flex flex-col gap-6;
+}
+
+.questionCard {
+  @apply overflow-hidden border border-border/60 bg-card/90 shadow-sm;
+}
+
+.questionHeader {
+  @apply flex flex-col gap-4 border-b border-border/40 p-5 sm:p-6;
+}
+
+.questionTitleRow {
+  @apply flex items-start gap-3;
+}
+
+.questionIcon {
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10;
+}
+
+.questionIconSvg {
+  @apply h-5 w-5 text-primary;
+}
+
+.questionTitleWrap {
+  @apply min-w-0 flex-1;
+}
+
+.questionTitle {
+  @apply text-xl font-semibold leading-tight text-foreground sm:text-2xl;
+}
+
+.questionTags {
+  @apply mt-3;
+}
+
+.questionContent {
+  @apply p-5 sm:p-6;
+}
+
+.prose {
+  @apply max-w-none;
+}
+
+.answerCard {
+  @apply overflow-hidden border border-border/60 bg-card/90 shadow-sm;
+}
+
+.answerHeader {
+  @apply flex items-center gap-3 border-b border-border/40 p-4 sm:p-5;
+}
+
+.answerIcon {
+  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10;
+}
+
+.answerIconSvg {
+  @apply h-5 w-5 text-emerald-600;
+}
+
+.answerTitle {
+  @apply text-base font-semibold text-foreground;
+}
+
+.answerContent {
+  @apply p-5 sm:p-6;
+}

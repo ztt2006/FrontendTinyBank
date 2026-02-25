@@ -1,8 +1,9 @@
-import { Card, Typography } from "antd";
 import TagList from "../TagList";
 import MdViewer from "../MdViewer";
 import useAddUserSignInRecord from "@/hooks/useAddUserSignInRecord";
-const { Title } = Typography;
+import { Card } from "@/components/ui/card";
+import { FileText, Lightbulb } from "lucide-react";
+import styles from "./index.module.css";
 
 interface Props {
   question;
@@ -12,18 +13,42 @@ const QuestionCard = (props: Props) => {
   const { question } = props;
   useAddUserSignInRecord();
   return (
-    <div className="question-card">
-      <Card>
-        <Title level={1} style={{ fontSize: 24 }}>
-          {question.title}
-        </Title>
-        <TagList tagList={question.tags} />
-        <div style={{ marginBottom: 16 }}></div>
-        <MdViewer value={question.content} />
+    <div className={styles.container}>
+      {/* 题目卡片 */}
+      <Card className={styles.questionCard}>
+        <div className={styles.questionHeader}>
+          <div className={styles.questionTitleRow}>
+            <div className={styles.questionIcon}>
+              <FileText className={styles.questionIconSvg} />
+            </div>
+            <div className={styles.questionTitleWrap}>
+              <h1 className={styles.questionTitle}>{question.title}</h1>
+              <div className={styles.questionTags}>
+                <TagList tagList={question.tags} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.questionContent}>
+          <div className={styles.prose}>
+            <MdViewer value={question.content} />
+          </div>
+        </div>
       </Card>
-      <div style={{ marginBottom: 16 }}></div>
-      <Card title="推荐答案">
-        <MdViewer value={question.answer} />
+
+      {/* 答案卡片 */}
+      <Card className={styles.answerCard}>
+        <div className={styles.answerHeader}>
+          <div className={styles.answerIcon}>
+            <Lightbulb className={styles.answerIconSvg} />
+          </div>
+          <h2 className={styles.answerTitle}>推荐答案</h2>
+        </div>
+        <div className={styles.answerContent}>
+          <div className={styles.prose}>
+            <MdViewer value={question.answer} />
+          </div>
+        </div>
       </Card>
     </div>
   );

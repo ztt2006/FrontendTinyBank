@@ -40,3 +40,10 @@ export const addSignInRecordAPI = async (
 ): Promise<addSignInRecordAPIResponseType> => {
   return request.post("/user/add/sign_in", options || {});
 };
+
+// 获取用户签到记录
+export const getSignInRecordsAPI = async (params, options?: optionType) => {
+  return request.get("/user/get/sign_in", {
+    params: { ...params, ...options },
+  });
+};

@@ -138,6 +138,36 @@ const addSignInRecordHandler = async (req, res, next) => {
     next(error);
   }
 };
+// 获取用户签到记录
+const getSignInRecordsHandler = async (req, res, next) => {
+  try {
+    const loginUser = getLoginUserFromSession(req);
+    const redisClient = req.app.locals.redisClient;
+    let { year } = req.query;
+    if (!year) {
+      year = new Date().getFullYear();
+    }
+    const key = `user:siginIn:${year}:${loginUser.id}`;
+    // 获取bitmap的所有位
+    const signInDays = [];
+    const buffer = await redisClient.getBuffer(key);
+    if (buffer) {
+      for (let i = 0; i < 366; i++) {
+        const byteIndex = Math.floor(i / 8);
+        const bitIndex = 7 - (i % 8);
+        if (byteIndex < buffer.length) {
+          const bit = (buffer[byteIndex] >> bitIndex) & 1;
+          if (bit) {
+            signInDays.push(i);
+          }
+        }
+      }
+    }
+    res.json(ResultUtils.success(signInDays));
+  } catch (error) {
+    next(error);
+  }
+};
 
 const userHandler = {
   getLoginUser,
@@ -145,6 +175,7 @@ const userHandler = {
   loginUserHandler,
   logoutUserHandler,
   addSignInRecordHandler,
+  getSignInRecordsHandler,
 };
 
 module.exports = userHandler;

@@ -1,0 +1,138 @@
+@import "../../global-tailwind.css";
+
+.page {
+  @apply min-h-[80vh] bg-linear-to-b from-background via-background to-muted/30;
+}
+
+.container {
+  @apply mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:pt-10;
+  @apply flex flex-col gap-6;
+}
+
+.mobileHeader {
+  @apply lg:hidden;
+}
+
+.mobileToggle {
+  @apply flex items-center gap-2 rounded-lg border border-border/60 bg-card px-4 py-2.5 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted/50;
+}
+
+.layout {
+  @apply flex flex-col gap-6 lg:flex-row;
+}
+
+.overlay {
+  @apply fixed inset-0 z-40 bg-black/50 lg:hidden;
+}
+
+.sidebar {
+  @apply fixed inset-y-0 left-0 z-50 w-72 shrink-0 -translate-x-full transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0;
+}
+
+.sidebarOpen {
+  @apply translate-x-0;
+}
+
+.sidebarCard {
+  @apply h-full overflow-hidden rounded-none border border-border/60 bg-card/95 shadow-sm backdrop-blur lg:sticky lg:top-6 lg:h-auto lg:rounded-xl;
+}
+
+.sidebarHeader {
+  @apply flex flex-col gap-1 border-b border-border/40 p-4 sm:p-5;
+}
+
+.sidebarTitleRow {
+  @apply flex items-center justify-between;
+}
+
+.sidebarTitleWrap {
+  @apply flex items-center gap-2;
+}
+
+.sidebarIcon {
+  @apply h-5 w-5 text-primary;
+}
+
+.sidebarTitle {
+  @apply text-base font-semibold text-foreground;
+}
+
+.sidebarClose {
+  @apply rounded p-1 text-muted-foreground hover:bg-muted/50 lg:hidden;
+}
+
+.sidebarCount {
+  @apply text-xs text-muted-foreground;
+}
+
+.sidebarNav {
+  @apply max-h-[calc(100vh-180px)] overflow-y-auto py-2;
+}
+
+.navItem {
+  @apply flex items-center gap-3 border-l-2 border-l-transparent px-4 py-2.5 text-sm text-muted-foreground transition-all hover:bg-muted/40 hover:text-foreground;
+}
+
+.navItemActive {
+  @apply border-l-primary bg-primary/5 font-medium text-foreground;
+}
+
+.navIndex {
+  @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-medium text-muted-foreground;
+}
+
+.navIndexActive {
+  @apply bg-primary text-primary-foreground;
+}
+
+.navText {
+  @apply flex-1 truncate;
+}
+
+.navArrow {
+  @apply h-4 w-4 text-primary;
+}
+
+.main {
+  @apply min-w-0 flex-1;
+}
+
+.loadingPage {
+  @apply min-h-[80vh] bg-linear-to-b from-background via-background to-muted/30;
+}
+
+.loadingContainer {
+  @apply mx-auto w-full max-w-6xl px-4 py-6 sm:py-10;
+}
+
+.loadingLayout {
+  @apply flex flex-col gap-6 lg:flex-row;
+}
+
+.loadingSidebar {
+  @apply hidden w-72 shrink-0 lg:block;
+}
+
+.loadingSidebarCard {
+  @apply sticky top-6 border border-border/60 bg-card/90;
+}
+
+.loadingMain {
+  @apply flex-1 space-y-4;
+}
+
+.loadingCard {
+  @apply border border-border/60 bg-card/90;
+}
+
+.errorPage {
+  @apply flex min-h-[80vh] items-center justify-center bg-linear-to-b from-background via-background to-muted/30;
+}
+
+.errorCard {
+  @apply border border-border/60 bg-card p-8 text-center;
+}
+
+.errorText {
+  @apply text-muted-foreground;
+}

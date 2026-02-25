@@ -1,0 +1,9 @@
+@import "../../../../global-tailwind.css";
+
+.container {
+  @apply h-[160px] w-full sm:h-[180px];
+}
+
+.chart {
+  @apply h-full w-full;
+}

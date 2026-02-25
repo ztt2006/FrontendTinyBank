@@ -1,0 +1,94 @@
+@import "../../../global-tailwind.css";
+
+.page {
+  @apply min-h-[80vh] bg-linear-to-b from-background via-background to-muted/30;
+}
+
+.container {
+  @apply mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:pt-10;
+  @apply flex flex-col gap-6;
+}
+
+.layout {
+  @apply grid grid-cols-1 gap-6 md:grid-cols-[280px_1fr];
+}
+
+.profileCard {
+  @apply border border-border/60 bg-card/90 shadow-sm;
+}
+
+.profileContent {
+  @apply flex flex-col items-center gap-4 p-6;
+}
+
+.avatarWrap {
+  @apply relative;
+}
+
+.avatar {
+  @apply h-20 w-20 rounded-full border-4 border-background object-cover shadow-md;
+}
+
+.avatarFallback {
+  @apply flex h-20 w-20 items-center justify-center rounded-full border-4 border-background bg-primary/10 text-2xl font-semibold text-primary shadow-md;
+}
+
+.userInfo {
+  @apply flex flex-col items-center gap-2 text-center;
+}
+
+.userName {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.userProfile {
+  @apply text-sm text-muted-foreground;
+}
+
+.statsGroup {
+  @apply mt-2 grid w-full grid-cols-2 gap-3;
+}
+
+.statItem {
+  @apply flex flex-col items-center gap-1 rounded-lg bg-muted/40 px-3 py-2;
+}
+
+.statValue {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.statLabel {
+  @apply text-xs text-muted-foreground;
+}
+
+.chartCard {
+  @apply border border-border/60 bg-card/90 shadow-sm;
+}
+
+.chartHeader {
+  @apply flex items-center gap-3 border-b border-border/40 p-4 sm:p-5;
+}
+
+.chartIcon {
+  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10;
+}
+
+.chartIconSvg {
+  @apply h-5 w-5 text-emerald-600;
+}
+
+.chartTitleWrap {
+  @apply flex flex-col gap-0.5;
+}
+
+.chartTitle {
+  @apply text-base font-semibold text-foreground;
+}
+
+.chartSubtitle {
+  @apply text-xs text-muted-foreground;
+}
+
+.chartContent {
+  @apply p-4 sm:p-5;
+}

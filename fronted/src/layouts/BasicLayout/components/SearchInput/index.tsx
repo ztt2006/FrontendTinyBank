@@ -15,7 +15,7 @@ const SearchInput = () => {
         style={{ borderRadius: 4, marginInlineEnd: 12 }}
         placeholder="搜索题目"
         onSearch={(value) => {
-          navigate(`/question?q=${value}`);
+          navigate(`/questions?q=${value}`);
         }}
       ></Search>
     </div>
